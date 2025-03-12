@@ -81,7 +81,7 @@ export default function AIPage() {
                 <div className="relative pl-8 border-l-2 border-primary/30 pb-8">
                   <div className="absolute -left-2 top-0 w-4 h-4 rounded-full bg-primary"></div>
                   <h3 className="text-xl font-semibold mb-2">1950s-1960s：AI诞生</h3>
-                  <p>达特茅斯会议提出"人工智能"概念，早期聚焦符号逻辑与规则系统。</p>
+                  <p>达特茅斯会议提出“人工智能”概念，早期聚焦符号逻辑与规则系统。</p>
                 </div>
                 
                 <div className="relative pl-8 border-l-2 border-primary/30 pb-8">
@@ -295,7 +295,7 @@ export default function AIPage() {
                 
                 <div className="p-4 rounded-lg border bg-card hover:shadow-md transition-all">
                   <h3 className="text-xl font-semibold mb-2">人机协作深化</h3>
-                  <p>AI作为"增强智能"辅助人类创新。</p>
+                  <p>AI作为“增强智能”辅助人类创新。</p>
                 </div>
               </div>
             </CardContent>
@@ -320,7 +320,7 @@ export default function AIPage() {
                 </li>
                 <li className="flex items-start">
                   <span className="text-primary mr-2">•</span>
-                  <span>企业应用AI需明确场景需求，避免"为技术而技术"。</span>
+                  <span>企业应用AI需明确场景需求，避免“为技术而技术”。</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-primary mr-2">•</span>

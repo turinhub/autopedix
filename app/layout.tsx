@@ -25,6 +25,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
+      <head>
+        <script
+          defer
+          src="https://umami.loongtales.com/script.js"
+          data-website-id="65cdce3c-3aaf-400b-a580-950fd76ed455"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

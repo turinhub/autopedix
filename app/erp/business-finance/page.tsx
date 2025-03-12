@@ -5,17 +5,10 @@ import { useEffect, useState } from "react";
 import { ChevronUp } from "lucide-react";
 import {
   BarChart4,
-  History,
-  Layers,
   TrendingUp,
   AlertTriangle,
-  Sparkles,
-  DollarSign,
   Database,
-  Users,
-  ShoppingCart,
   FileCheck,
-  Settings,
   ArrowRightLeft,
   LineChart,
   CheckCircle2,
@@ -149,7 +142,7 @@ export default function BusinessFinancePage() {
                   </div>
                   <h3 className="text-xl font-semibold">数据一致性</h3>
                 </div>
-                <p className="text-muted-foreground">统一业务与财务数据口径，避免"财务账"与"业务账"差异。</p>
+                <p className="text-muted-foreground">统一业务与财务数据口径，避免“财务账”与“业务账”差异。</p>
               </div>
 
               <div className="bg-card rounded-lg p-6 shadow-sm border hover:shadow-md hover:border-foreground/20 transition-all">
@@ -210,7 +203,7 @@ export default function BusinessFinancePage() {
               <div className="bg-card rounded-lg p-6 shadow-sm border">
                 <h3 className="text-xl font-semibold mb-4">步骤3：数据流自动化</h3>
                 <p className="text-muted-foreground">
-                  业务动作触发财务凭证生成，实现"单证合一"。
+                  业务动作触发财务凭证生成，实现“单证合一”。
                 </p>
               </div>
 
@@ -440,7 +433,7 @@ export default function BusinessFinancePage() {
 
                 <div className="text-center pt-6">
                   <p className="text-xl font-medium text-primary">
-                    业财一体化，让每一笔业务都"自动生财"
+                    业财一体化，让每一笔业务都“自动生财”
                   </p>
                 </div>
               </div>

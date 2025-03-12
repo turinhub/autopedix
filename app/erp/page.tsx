@@ -11,7 +11,6 @@ import {
   TrendingUp,
   AlertTriangle,
   Sparkles,
-  Github,
   Database,
   Users,
   ShoppingCart,
@@ -122,7 +121,7 @@ export default function ERPPage() {
                     </div>
                     <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-border md:hidden -translate-x-8"></div>
                     <h3 className="text-xl font-semibold mb-2">MRP（物料需求计划）</h3>
-                    <p className="text-muted-foreground">聚焦生产物料计划，解决"何时采购、生产多少"。</p>
+                    <p className="text-muted-foreground">聚焦生产物料计划，解决“何时采购、生产多少”。</p>
                   </div>
                 </div>
               </div>
@@ -191,15 +190,17 @@ export default function ERPPage() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-card rounded-lg p-6 shadow-sm border hover:shadow-md hover:border-foreground/20 transition-all group">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <DollarSign className="h-5 w-5" />
+              <Link href="/erp/finance" className="block">
+                <div className="bg-card rounded-lg p-6 shadow-sm border hover:shadow-md hover:border-foreground/20 transition-all group">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <DollarSign className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-xl font-semibold">财务管理</h3>
                   </div>
-                  <h3 className="text-xl font-semibold">财务管理</h3>
+                  <p className="text-muted-foreground">应收/应付、成本核算、预算控制。</p>
                 </div>
-                <p className="text-muted-foreground">应收/应付、成本核算、预算控制。</p>
-              </div>
+              </Link>
 
               <div className="bg-card rounded-lg p-6 shadow-sm border hover:shadow-md hover:border-foreground/20 transition-all group">
                 <div className="flex items-center gap-3 mb-3">
@@ -456,4 +457,4 @@ export default function ERPPage() {
       )}
     </>
   )
-} 
+}
