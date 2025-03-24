@@ -32,6 +32,15 @@ export default function BusinessFinancePage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const yOffset = -80; // 考虑固定导航的高度
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       {/* 页面标题区域 */}
@@ -446,17 +455,17 @@ export default function BusinessFinancePage() {
       <nav className="md:hidden sticky bottom-8 flex justify-center z-10">
         <div className="bg-background/80 backdrop-blur-sm rounded-full shadow-lg p-2 border">
           <div className="flex overflow-x-auto space-x-1 px-1 no-scrollbar">
-            <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-              <a href="#intro">简介</a>
+            <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" onClick={() => scrollToSection("intro")}>
+              简介
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-              <a href="#definition">定义</a>
+            <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" onClick={() => scrollToSection("definition")}>
+              定义
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-              <a href="#value">价值</a>
+            <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" onClick={() => scrollToSection("value")}>
+              价值
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-              <a href="#implementation">实现</a>
+            <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" onClick={() => scrollToSection("implementation")}>
+              实现
             </Button>
           </div>
         </div>
@@ -466,29 +475,29 @@ export default function BusinessFinancePage() {
       <nav className="hidden md:flex sticky bottom-8 justify-center z-10">
         <div className="bg-background/80 backdrop-blur-sm rounded-full shadow-lg p-2 border">
           <div className="flex space-x-2">
-            <Button variant="ghost" size="sm" className="rounded-full" asChild>
-              <a href="#intro">简介</a>
+            <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("intro")}>
+              简介
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full" asChild>
-              <a href="#definition">定义</a>
+            <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("definition")}>
+              定义
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full" asChild>
-              <a href="#value">价值</a>
+            <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("value")}>
+              价值
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full" asChild>
-              <a href="#implementation">实现</a>
+            <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("implementation")}>
+              实现
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full" asChild>
-              <a href="#scenarios">场景</a>
+            <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("scenarios")}>
+              场景
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full" asChild>
-              <a href="#challenges">挑战</a>
+            <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("challenges")}>
+              挑战
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full" asChild>
-              <a href="#cases">案例</a>
+            <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("cases")}>
+              案例
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full" asChild>
-              <a href="#summary">总结</a>
+            <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("summary")}>
+              总结
             </Button>
           </div>
         </div>

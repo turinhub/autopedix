@@ -34,6 +34,15 @@ export default function ERPPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const yOffset = -80; // 考虑固定导航的高度
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       {/* 页面标题区域 */}
@@ -202,15 +211,17 @@ export default function ERPPage() {
                 </div>
               </Link>
 
-              <div className="bg-card rounded-lg p-6 shadow-sm border hover:shadow-md hover:border-foreground/20 transition-all group">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <ShoppingCart className="h-5 w-5" />
+              <Link href="/erp/scm" className="block">
+                <div className="bg-card rounded-lg p-6 shadow-sm border hover:shadow-md hover:border-foreground/20 transition-all group">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <ShoppingCart className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-xl font-semibold">供应链管理（SCM）</h3>
                   </div>
-                  <h3 className="text-xl font-semibold">供应链管理（SCM）</h3>
+                  <p className="text-muted-foreground">采购、库存、物流一体化。</p>
                 </div>
-                <p className="text-muted-foreground">采购、库存、物流一体化。</p>
-              </div>
+              </Link>
 
               <div className="bg-card rounded-lg p-6 shadow-sm border hover:shadow-md hover:border-foreground/20 transition-all group">
                 <div className="flex items-center gap-3 mb-3">
@@ -222,15 +233,17 @@ export default function ERPPage() {
                 <p className="text-muted-foreground">生产计划、工序管理、质量控制。</p>
               </div>
 
-              <div className="bg-card rounded-lg p-6 shadow-sm border hover:shadow-md hover:border-foreground/20 transition-all group">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <Users className="h-5 w-5" />
+              <Link href="/erp/hrm" className="block">
+                <div className="bg-card rounded-lg p-6 shadow-sm border hover:shadow-md hover:border-foreground/20 transition-all group">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <Users className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-xl font-semibold">人力资源管理（HRM）</h3>
                   </div>
-                  <h3 className="text-xl font-semibold">人力资源管理（HRM）</h3>
+                  <p className="text-muted-foreground">招聘、考勤、绩效、薪酬。</p>
                 </div>
-                <p className="text-muted-foreground">招聘、考勤、绩效、薪酬。</p>
-              </div>
+              </Link>
 
               <div className="bg-card rounded-lg p-6 shadow-sm border hover:shadow-md hover:border-foreground/20 transition-all group md:col-span-2">
                 <div className="flex items-center gap-3 mb-3">
@@ -397,17 +410,17 @@ export default function ERPPage() {
       <nav className="md:hidden sticky bottom-8 flex justify-center z-10">
         <div className="bg-background/80 backdrop-blur-sm rounded-full shadow-lg p-2 border">
           <div className="flex overflow-x-auto space-x-1 px-1 no-scrollbar">
-            <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-              <a href="#intro">简介</a>
+            <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" onClick={() => scrollToSection("intro")}>
+              简介
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-              <a href="#definition">定义</a>
+            <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" onClick={() => scrollToSection("definition")}>
+              定义
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-              <a href="#history">历程</a>
+            <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" onClick={() => scrollToSection("history")}>
+              历程
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-              <a href="#modules">模块</a>
+            <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" onClick={() => scrollToSection("modules")}>
+              模块
             </Button>
           </div>
         </div>
@@ -417,29 +430,29 @@ export default function ERPPage() {
       <nav className="hidden md:flex sticky bottom-8 justify-center z-10">
         <div className="bg-background/80 backdrop-blur-sm rounded-full shadow-lg p-2 border">
           <div className="flex space-x-2">
-            <Button variant="ghost" size="sm" className="rounded-full" asChild>
-              <a href="#intro">简介</a>
+            <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("intro")}>
+              简介
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full" asChild>
-              <a href="#definition">定义</a>
+            <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("definition")}>
+              定义
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full" asChild>
-              <a href="#history">历程</a>
+            <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("history")}>
+              历程
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full" asChild>
-              <a href="#modules">模块</a>
+            <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("modules")}>
+              模块
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full" asChild>
-              <a href="#implementation">实施</a>
+            <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("implementation")}>
+              实施
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full" asChild>
-              <a href="#challenges">挑战</a>
+            <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("challenges")}>
+              挑战
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full" asChild>
-              <a href="#trends">趋势</a>
+            <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("trends")}>
+              趋势
             </Button>
-            <Button variant="ghost" size="sm" className="rounded-full" asChild>
-              <a href="#summary">总结</a>
+            <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("summary")}>
+              总结
             </Button>
           </div>
         </div>

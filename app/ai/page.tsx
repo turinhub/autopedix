@@ -21,6 +21,15 @@ export default function AIPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const yOffset = -80; // 考虑固定导航的高度
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   return (
     <div>
       <div className="container mx-auto px-4 py-8 max-w-6xl">
@@ -132,13 +141,18 @@ export default function AIPage() {
                 
                 <div className="p-4 rounded-lg border bg-card hover:shadow-md transition-all">
                   <h3 className="text-xl font-semibold mb-2">自然语言处理（NLP）</h3>
-                  <p>语义理解、机器翻译、对话系统。</p>
+                  <p>文本分析、情感识别、语言理解。</p>
                 </div>
                 
-                <div className="p-4 rounded-lg border bg-card hover:shadow-md transition-all">
+                <a href="/ai/cv" className="p-4 rounded-lg border bg-card hover:shadow-md transition-all hover:bg-secondary/20">
                   <h3 className="text-xl font-semibold mb-2">计算机视觉（CV）</h3>
                   <p>图像识别、视频分析、人脸检测。</p>
-                </div>
+                </a>
+                
+                <a href="/ai/llm" className="p-4 rounded-lg border bg-card hover:shadow-md transition-all hover:bg-secondary/20">
+                  <h3 className="text-xl font-semibold mb-2">大语言模型（LLM）</h3>
+                  <p>文本生成、对话系统、知识问答。</p>
+                </a>
                 
                 <div className="p-4 rounded-lg border bg-card hover:shadow-md transition-all">
                   <h3 className="text-xl font-semibold mb-2">机器人技术</h3>
@@ -335,17 +349,37 @@ export default function AIPage() {
         <nav className="md:hidden sticky bottom-8 flex justify-center z-10">
           <div className="bg-background/80 backdrop-blur-sm rounded-full shadow-lg p-2 border">
             <div className="flex overflow-x-auto space-x-1 px-1 no-scrollbar">
-              <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-                <a href="#definition">定义</a>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="rounded-full text-xs whitespace-nowrap"
+                onClick={() => scrollToSection("definition")}
+              >
+                定义
               </Button>
-              <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-                <a href="#history">历程</a>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="rounded-full text-xs whitespace-nowrap"
+                onClick={() => scrollToSection("history")}
+              >
+                历程
               </Button>
-              <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-                <a href="#technologies">技术</a>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="rounded-full text-xs whitespace-nowrap"
+                onClick={() => scrollToSection("technologies")}
+              >
+                技术
               </Button>
-              <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-                <a href="#applications">应用</a>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="rounded-full text-xs whitespace-nowrap"
+                onClick={() => scrollToSection("applications")}
+              >
+                应用
               </Button>
             </div>
           </div>
@@ -355,29 +389,53 @@ export default function AIPage() {
         <nav className="hidden md:flex sticky bottom-8 justify-center z-10">
           <div className="bg-background/80 backdrop-blur-sm rounded-full shadow-lg p-2 border">
             <div className="flex space-x-2">
-              <Button variant="ghost" size="sm" className="rounded-full" asChild>
-                <a href="#definition">定义</a>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="rounded-full"
+                onClick={() => scrollToSection("definition")}
+              >
+                定义
               </Button>
-              <Button variant="ghost" size="sm" className="rounded-full" asChild>
-                <a href="#history">历程</a>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="rounded-full"
+                onClick={() => scrollToSection("history")}
+              >
+                历程
               </Button>
-              <Button variant="ghost" size="sm" className="rounded-full" asChild>
-                <a href="#technologies">技术</a>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="rounded-full"
+                onClick={() => scrollToSection("technologies")}
+              >
+                技术
               </Button>
-              <Button variant="ghost" size="sm" className="rounded-full" asChild>
-                <a href="#applications">应用</a>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="rounded-full"
+                onClick={() => scrollToSection("applications")}
+              >
+                应用
               </Button>
-              <Button variant="ghost" size="sm" className="rounded-full" asChild>
-                <a href="#advantages">优势</a>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="rounded-full"
+                onClick={() => scrollToSection("advantages")}
+              >
+                优势
               </Button>
-              <Button variant="ghost" size="sm" className="rounded-full" asChild>
-                <a href="#challenges">挑战</a>
-              </Button>
-              <Button variant="ghost" size="sm" className="rounded-full" asChild>
-                <a href="#future">趋势</a>
-              </Button>
-              <Button variant="ghost" size="sm" className="rounded-full" asChild>
-                <a href="#summary">总结</a>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="rounded-full"
+                onClick={() => scrollToSection("challenges")}
+              >
+                挑战
               </Button>
             </div>
           </div>

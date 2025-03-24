@@ -37,6 +37,15 @@ export default function FinancePage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const yOffset = -80; // 考虑固定导航的高度
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       {/* 页面标题区域 */}
@@ -797,7 +806,6 @@ export default function FinancePage() {
 
                   <div className="mt-8 bg-card rounded-lg p-6 shadow-sm border text-center">
                     <p className="text-lg italic text-muted-foreground">“ERP财务模块让财务部门从后台走向了业务前线。”</p>
-                    <p className="text-sm mt-2">— 某企业CFO</p>
                   </div>
                 </div>
               </div>
@@ -807,32 +815,32 @@ export default function FinancePage() {
             <nav className="md:hidden sticky bottom-8 flex justify-center z-10">
               <div className="bg-background/80 backdrop-blur-sm rounded-full shadow-lg p-2 border">
                 <div className="flex overflow-x-auto space-x-1 px-1 no-scrollbar">
-                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-                    <a href="#intro">简介</a>
+                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" onClick={() => scrollToSection("intro")}>
+                    简介
                   </Button>
-                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-                    <a href="#core-positioning">核心定位</a>
+                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" onClick={() => scrollToSection("core-positioning")}>
+                    核心定位
                   </Button>
-                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-                    <a href="#core-functions">核心功能</a>
+                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" onClick={() => scrollToSection("core-functions")}>
+                    核心功能
                   </Button>
-                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-                    <a href="#comparison">对比</a>
+                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" onClick={() => scrollToSection("comparison")}>
+                    对比
                   </Button>
-                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-                    <a href="#steps">实施步骤</a>
+                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" onClick={() => scrollToSection("steps")}>
+                    实施步骤
                   </Button>
-                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-                    <a href="#challenges">实施挑战</a>
+                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" onClick={() => scrollToSection("challenges")}>
+                    实施挑战
                   </Button>
-                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-                    <a href="#scenarios">应用场景</a>
+                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" onClick={() => scrollToSection("scenarios")}>
+                    应用场景
                   </Button>
-                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-                    <a href="#cases">成功案例</a>
+                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" onClick={() => scrollToSection("cases")}>
+                    成功案例
                   </Button>
-                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" asChild>
-                    <a href="#future">未来趋势</a>
+                  <Button variant="ghost" size="sm" className="rounded-full text-xs whitespace-nowrap" onClick={() => scrollToSection("future")}>
+                    未来趋势
                   </Button>
                 </div>
               </div>
@@ -842,32 +850,32 @@ export default function FinancePage() {
             <nav className="hidden md:flex sticky bottom-8 justify-center z-10">
               <div className="bg-background/80 backdrop-blur-sm rounded-full shadow-lg p-2 border">
                 <div className="flex space-x-2">
-                  <Button variant="ghost" size="sm" className="rounded-full" asChild>
-                    <a href="#intro">简介</a>
+                  <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("intro")}>
+                    简介
                   </Button>
-                  <Button variant="ghost" size="sm" className="rounded-full" asChild>
-                    <a href="#core-positioning">核心定位</a>
+                  <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("core-positioning")}>
+                    核心定位
                   </Button>
-                  <Button variant="ghost" size="sm" className="rounded-full" asChild>
-                    <a href="#core-functions">核心功能</a>
+                  <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("core-functions")}>
+                    核心功能
                   </Button>
-                  <Button variant="ghost" size="sm" className="rounded-full" asChild>
-                    <a href="#comparison">对比</a>
+                  <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("comparison")}>
+                    对比
                   </Button>
-                  <Button variant="ghost" size="sm" className="rounded-full" asChild>
-                    <a href="#steps">实施步骤</a>
+                  <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("steps")}>
+                    实施步骤
                   </Button>
-                  <Button variant="ghost" size="sm" className="rounded-full" asChild>
-                    <a href="#challenges">实施挑战</a>
+                  <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("challenges")}>
+                    实施挑战
                   </Button>
-                  <Button variant="ghost" size="sm" className="rounded-full" asChild>
-                    <a href="#scenarios">应用场景</a>
+                  <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("scenarios")}>
+                    应用场景
                   </Button>
-                  <Button variant="ghost" size="sm" className="rounded-full" asChild>
-                    <a href="#cases">成功案例</a>
+                  <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("cases")}>
+                    成功案例
                   </Button>
-                  <Button variant="ghost" size="sm" className="rounded-full" asChild>
-                    <a href="#future">未来趋势</a>
+                  <Button variant="ghost" size="sm" className="rounded-full" onClick={() => scrollToSection("future")}>
+                    未来趋势
                   </Button>
                 </div>
               </div>
