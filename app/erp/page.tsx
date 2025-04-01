@@ -245,15 +245,17 @@ export default function ERPPage() {
                 </div>
               </Link>
 
-              <div className="bg-card rounded-lg p-6 shadow-sm border hover:shadow-md hover:border-foreground/20 transition-all group md:col-span-2">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <UserCheck className="h-5 w-5" />
+              <Link href="/erp/crm" className="block md:col-span-2">
+                <div className="bg-card rounded-lg p-6 shadow-sm border hover:shadow-md hover:border-foreground/20 transition-all group">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <UserCheck className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-xl font-semibold">客户关系管理（CRM）</h3>
                   </div>
-                  <h3 className="text-xl font-semibold">客户关系管理（CRM）</h3>
+                  <p className="text-muted-foreground">销售线索、客户服务、数据分析。</p>
                 </div>
-                <p className="text-muted-foreground">销售线索、客户服务、数据分析。</p>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

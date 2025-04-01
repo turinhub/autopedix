@@ -23,6 +23,10 @@ export const routes: Routes = {
         path: "/erp/scm",
         label: "供应链管理"
       },
+      crm: {
+        path: "/erp/crm",
+        label: "客户关系管理"
+      },
       hrm: {
         path: "/erp/hrm",
         label: "人力资源管理"
