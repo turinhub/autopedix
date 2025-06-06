@@ -48,6 +48,10 @@ export const routes: Routes = {
       cv: {
         path: "/ai/cv",
         label: "计算机视觉"
+      },
+      mcp: {
+        path: "/ai/mcp",
+        label: "MCP协议"
       }
     }
   }

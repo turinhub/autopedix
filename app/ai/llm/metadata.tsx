@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "大语言模型 | AI应用领域",
