@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github, Heart, Sparkles, Brain, Building } from "lucide-react"
+import { Github, Sparkles, Brain, Building } from "lucide-react"
 
 export function SiteFooter() {
   const currentYear = new Date().getFullYear()
