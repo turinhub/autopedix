@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG技术演进路线图</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        svg {
+            width: 100%;
+            height: auto;
+        }
+        .card {
+            fill: none;
+            stroke-width: 2;
+            rx: 15;
+            ry: 15;
+        }
+        .basic { stroke: #4A90E2; fill: url(#basicGradient); }
+        .advanced { stroke: #8B5CF6; fill: url(#advancedGradient); }
+        .graph { stroke: #E91E63; fill: url(#graphGradient); }
+        .reasoning { stroke: #FF9500; fill: url(#reasoningGradient); }
+        .agentic { stroke: #4CAF50; fill: url(#agenticGradient); }
+        
+        .title-text {
+            font-size: 24px;
+            font-weight: bold;
+            text-anchor: middle;
+            fill: #333;
+        }
+        .subtitle-text {
+            font-size: 14px;
+            text-anchor: middle;
+            fill: #666;
+        }
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            text-anchor: middle;
+            fill: white;
+        }
+        .feature-text {
+            font-size: 12px;
+            fill: #333;
+        }
+        .tech-text {
+            font-size: 11px;
+            fill: #555;
+        }
+        .timeline-text {
+            font-size: 12px;
+            font-weight: bold;
+            text-anchor: middle;
+            fill: white;
+        }
+        .future-text {
+            font-size: 14px;
+            font-weight: bold;
+            text-anchor: middle;
+            fill: #333;
+        }
+        .trend-text {
+            font-size: 12px;
+            fill: #666;
+        }
+        .arrow {
+            stroke: #999;
+            stroke-width: 2;
+            fill: none;
+            marker-end: url(#arrowhead);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <svg viewBox="0 0 1160 800">
+            <defs>
+                <!-- 渐变定义 -->
+                <linearGradient id="basicGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#4A90E2"/>
+                    <stop offset="100%" style="stop-color:#357ABD"/>
+                </linearGradient>
+                <linearGradient id="advancedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#8B5CF6"/>
+                    <stop offset="100%" style="stop-color:#7C3AED"/>
+                </linearGradient>
+                <linearGradient id="graphGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#E91E63"/>
+                    <stop offset="100%" style="stop-color:#C2185B"/>
+                </linearGradient>
+                <linearGradient id="reasoningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#FF9500"/>
+                    <stop offset="100%" style="stop-color:#E68900"/>
+                </linearGradient>
+                <linearGradient id="agenticGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#4CAF50"/>
+                    <stop offset="100%" style="stop-color:#45A049"/>
+                </linearGradient>
+                
+                <!-- 箭头标记 -->
+                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#999"/>
+                </marker>
+                
+                <!-- 时间线渐变 -->
+                <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#4A90E2"/>
+                    <stop offset="25%" style="stop-color:#8B5CF6"/>
+                    <stop offset="50%" style="stop-color:#E91E63"/>
+                    <stop offset="75%" style="stop-color:#FF9500"/>
+                    <stop offset="100%" style="stop-color:#4CAF50"/>
+                </linearGradient>
+            </defs>
+            
+            <!-- 标题 -->
+            <text x="580" y="30" class="title-text">RAG技术演进：从基础检索到智能体生态</text>
+            <text x="580" y="50" class="subtitle-text">2023-2025年检索增强生成技术发展路线图</text>
+            
+            <!-- 时间线 -->
+            <rect x="80" y="80" width="1000" height="8" fill="url(#timelineGradient)" rx="4"/>
+            
+            <!-- 时间节点 -->
+            <circle cx="130" cy="84" r="12" fill="#4A90E2"/>
+            <text x="130" y="89" class="timeline-text">2023</text>
+            <text x="130" y="110" class="timeline-text" style="fill:#4A90E2;">基础RAG</text>
+            
+            <circle cx="330" cy="84" r="12" fill="#8B5CF6"/>
+            <text x="330" y="89" class="timeline-text">2023-24</text>
+            <text x="330" y="110" class="timeline-text" style="fill:#8B5CF6;">高级RAG</text>
+            
+            <circle cx="580" cy="84" r="12" fill="#E91E63"/>
+            <text x="580" y="89" class="timeline-text">2024</text>
+            <text x="580" y="110" class="timeline-text" style="fill:#E91E63;">GraphRAG</text>
+            
+            <circle cx="830" cy="84" r="12" fill="#FF9500"/>
+            <text x="830" y="89" class="timeline-text">2024</text>
+            <text x="830" y="110" class="timeline-text" style="fill:#FF9500;">推理型RAG</text>
+            
+            <circle cx="1030" cy="84" r="12" fill="#4CAF50"/>
+            <text x="1030" y="89" class="timeline-text">2025+</text>
+            <text x="1030" y="110" class="timeline-text" style="fill:#4CAF50;">Agentic RAG</text>
+            
+            <!-- 卡片 -->
+            <!-- 基础RAG -->
+            <rect x="30" y="140" width="200" height="380" class="card basic"/>
+            <rect x="30" y="140" width="200" height="40" fill="#4A90E2" rx="15" ry="15"/>
+            <text x="130" y="165" class="card-title">基础RAG</text>
+            
+            <text x="40" y="200" class="feature-text">✓ 简单"检索-然后-生成"</text>
+            <text x="40" y="215" class="feature-text">基础的检索增强生成模式，检索</text>
+            <text x="40" y="230" class="feature-text">与生成分离，结构相对简单</text>
+            
+            <text x="40" y="260" class="feature-text">✓ 静态向量检索</text>
+            <text x="40" y="275" class="feature-text">基于单一向量相似度的检索机</text>
+            <text x="40" y="290" class="feature-text">制，单轮交互模式</text>
+            
+            <text x="40" y="320" class="feature-text">⚠ 固定检索策略</text>
+            <text x="40" y="335" class="feature-text">缺乏动态调整能力，检索参数固</text>
+            <text x="40" y="350" class="feature-text">定，难以适应复杂查询</text>
+            
+            <rect x="40" y="370" width="150" height="80" fill="#f8f9fa" stroke="#ddd" rx="5"/>
+            <text x="115" y="385" class="tech-text" style="font-weight:bold;">核心技术</text>
+            <text x="45" y="400" class="tech-text">• 基础向量检索</text>
+            <text x="45" y="413" class="tech-text">• 简单文本分割</text>
+            <text x="45" y="426" class="tech-text">• 关键词匹配机制</text>
+            <text x="45" y="439" class="tech-text">• 适合简单问答场景</text>
+            
+            <rect x="60" y="460" width="120" height="30" fill="#4A90E2" rx="15"/>
+            <text x="120" y="480" class="timeline-text">LangChain + Embeddings</text>
+            
+            <!-- 高级RAG -->
+            <rect x="280" y="140" width="200" height="380" class="card advanced"/>
+            <rect x="280" y="140" width="200" height="40" fill="#8B5CF6" rx="15" ry="15"/>
+            <text x="380" y="165" class="card-title">高级RAG</text>
+            
+            <text x="290" y="200" class="feature-text">✓ 混合检索策略</text>
+            <text x="290" y="215" class="feature-text">结合稠密向量和稀疏检索</text>
+            <text x="290" y="230" class="feature-text">(BM25)，融合语义和字面意思</text>
+            
+            <text x="290" y="260" class="feature-text">✓ 多查询检索</text>
+            <text x="290" y="275" class="feature-text">自动生成多个查询变体，扩大检</text>
+            <text x="290" y="290" class="feature-text">索范围，提高召回率</text>
+            
+            <text x="290" y="320" class="feature-text">✓ 检索质量评估</text>
+            <text x="290" y="335" class="feature-text">引入反馈机制，评估检索结果质</text>
+            <text x="290" y="350" class="feature-text">量，支持在线优化</text>
+            
+            <rect x="290" y="370" width="150" height="80" fill="#f8f9fa" stroke="#ddd" rx="5"/>
+            <text x="365" y="385" class="tech-text" style="font-weight:bold;">核心技术</text>
+            <text x="295" y="400" class="tech-text">• 混合检索与重排序</text>
+            <text x="295" y="413" class="tech-text">• 自适应检索机制</text>
+            <text x="295" y="426" class="tech-text">• 检索质量评估</text>
+            <text x="295" y="439" class="tech-text">• HyDE、RAPTOR等技术</text>
+            
+            <rect x="310" y="460" width="120" height="30" fill="#8B5CF6" rx="15"/>
+            <text x="370" y="480" class="timeline-text">LlamaIndex + 混合检索</text>
+            
+            <!-- GraphRAG -->
+            <rect x="530" y="140" width="200" height="380" class="card graph"/>
+            <rect x="530" y="140" width="200" height="40" fill="#E91E63" rx="15" ry="15"/>
+            <text x="630" y="165" class="card-title">GraphRAG</text>
+            
+            <text x="540" y="200" class="feature-text">✓ 知识图谱融合</text>
+            <text x="540" y="215" class="feature-text">结合知识图谱与向量数据库，增</text>
+            <text x="540" y="230" class="feature-text">强结构化知识表示</text>
+            
+            <text x="540" y="260" class="feature-text">✓ 实体链接与关系推理</text>
+            <text x="540" y="275" class="feature-text">识别文本中的实体并链接知识</text>
+            <text x="540" y="290" class="feature-text">图谱，支持关系推理</text>
+            
+            <text x="540" y="320" class="feature-text">✓ 多跳推理能力</text>
+            <text x="540" y="335" class="feature-text">通过图结构支持多跳查询和复杂</text>
+            <text x="540" y="350" class="feature-text">关系推理，增强认知深度</text>
+            
+            <rect x="540" y="370" width="150" height="80" fill="#f8f9fa" stroke="#ddd" rx="5"/>
+            <text x="615" y="385" class="tech-text" style="font-weight:bold;">核心技术</text>
+            <text x="545" y="400" class="tech-text">• 知识图谱构建与查询</text>
+            <text x="545" y="413" class="tech-text">• 实体识别与链接</text>
+            <text x="545" y="426" class="tech-text">• 图结构向量混合检索</text>
+            <text x="545" y="439" class="tech-text">• 结构化查询增强</text>
+            
+            <rect x="560" y="460" width="120" height="30" fill="#E91E63" rx="15"/>
+            <text x="620" y="480" class="timeline-text">Neo4j + 向量数据库</text>
+            
+            <!-- 推理型RAG -->
+            <rect x="780" y="140" width="200" height="380" class="card reasoning"/>
+            <rect x="780" y="140" width="200" height="40" fill="#FF9500" rx="15" ry="15"/>
+            <text x="880" y="165" class="card-title">推理型RAG</text>
+            
+            <text x="790" y="200" class="feature-text">✓ 思维链增强</text>
+            <text x="790" y="215" class="feature-text">引入Chain-of-Thought推理，显</text>
+            <text x="790" y="230" class="feature-text">著提升复杂问题解决能力</text>
+            
+            <text x="790" y="260" class="feature-text">✓ 自反思机制</text>
+            <text x="790" y="275" class="feature-text">具备自我审查和纠错能力，支持</text>
+            <text x="790" y="290" class="feature-text">多轮推理优化</text>
+            
+            <text x="790" y="320" class="feature-text">✓ 多步骤分解推理</text>
+            <text x="790" y="335" class="feature-text">将复杂问题分解为多个子步骤，</text>
+            <text x="790" y="350" class="feature-text">逐步推理求解</text>
+            
+            <rect x="790" y="370" width="150" height="80" fill="#f8f9fa" stroke="#ddd" rx="5"/>
+            <text x="865" y="385" class="tech-text" style="font-weight:bold;">核心技术</text>
+            <text x="795" y="400" class="tech-text">• 思维链(CoT)推理</text>
+            <text x="795" y="413" class="tech-text">• 自反思与验证机制</text>
+            <text x="795" y="426" class="tech-text">• 不确定性量化</text>
+            <text x="795" y="439" class="tech-text">• DeepSeek R1等大模型支持</text>
+            
+            <rect x="810" y="460" width="120" height="30" fill="#FF9500" rx="15"/>
+            <text x="870" y="480" class="timeline-text">DeepSeek R1 + ReAct</text>
+            
+            <!-- Agentic RAG -->
+            <rect x="1030" y="140" width="200" height="380" class="card agentic"/>
+            <rect x="1030" y="140" width="200" height="40" fill="#4CAF50" rx="15" ry="15"/>
+            <text x="1130" y="165" class="card-title">Agentic RAG</text>
+            
+            <text x="1040" y="200" class="feature-text">✓ 自主智能体架构</text>
+            <text x="1040" y="215" class="feature-text">RAG作为智能体生态系统的核心</text>
+            <text x="1040" y="230" class="feature-text">组件，具备自主决策和行动能力</text>
+            
+            <text x="1040" y="260" class="feature-text">✓ 工具使用与规划</text>
+            <text x="1040" y="275" class="feature-text">能够自主选择和使用外部工具，</text>
+            <text x="1040" y="290" class="feature-text">制定多步骤执行计划</text>
+            
+            <text x="1040" y="320" class="feature-text">✓ 多模态理解与生成</text>
+            <text x="1040" y="335" class="feature-text">支持跨模态知识检索与生成，处</text>
+            <text x="1040" y="350" class="feature-text">理文本、图像、音频等多种数据</text>
+            
+            <rect x="1040" y="370" width="150" height="80" fill="#f8f9fa" stroke="#ddd" rx="5"/>
+            <text x="1115" y="385" class="tech-text" style="font-weight:bold;">核心技术</text>
+            <text x="1045" y="400" class="tech-text">• 智能体架构与编排</text>
+            <text x="1045" y="413" class="tech-text">• 多模态知识检索</text>
+            <text x="1045" y="426" class="tech-text">• 工具使用与规划</text>
+            <text x="1045" y="439" class="tech-text">• 持续学习与适应</text>
+            
+            <rect x="1060" y="460" width="120" height="30" fill="#4CAF50" rx="15"/>
+            <text x="1120" y="480" class="timeline-text">Claude + AutoGPT</text>
+            
+            <!-- 连接箭头 -->
+            <path d="M 230 320 Q 250 320 270 320" class="arrow"/>
+            <path d="M 480 320 Q 500 320 520 320" class="arrow"/>
+            <path d="M 730 320 Q 750 320 770 320" class="arrow"/>
+            <path d="M 980 320 Q 1000 320 1020 320" class="arrow"/>
+            
+            <!-- 2025年MCP爆发后的RAG技术发展趋势 -->
+            <text x="580" y="580" class="future-text">2025年MCP爆发后的RAG技术发展趋势</text>
+            
+            <!-- 趋势点 -->
+            <circle cx="120" cy="610" r="6" fill="#4A90E2"/>
+            <text x="140" y="610" class="trend-text">多模态混合检索:</text>
+            <text x="140" y="625" class="trend-text">整合文本、图像、视频等多模态数据，实现跨模态知识检索与理解</text>
+            
+            <circle cx="420" cy="610" r="6" fill="#8B5CF6"/>
+            <text x="440" y="610" class="trend-text">自适应知识更新:</text>
+            <text x="440" y="625" class="trend-text">自动识别知识过时问题并主动更新知识，保持知识实效性</text>
+            
+            <circle cx="120" cy="660" r="6" fill="#E91E63"/>
+            <text x="140" y="660" class="trend-text">领域专家系统:</text>
+            <text x="140" y="675" class="trend-text">针对特定领域(如法律、医疗)的深度优化RAG系统，融合专业知识与规则</text>
+            
+            <circle cx="520" cy="660" r="6" fill="#FF9500"/>
+            <text x="540" y="660" class="trend-text">协作式RAG:</text>
+            <text x="540" y="675" class="trend-text">多智能体协同工作的RAG生态，支持复杂任务分解与协作解决</text>
+            
+            <circle cx="120" cy="710" r="6" fill="#4CAF50"/>
+            <text x="140" y="710" class="trend-text">可解释性增强:</text>
+            <text x="140" y="725" class="trend-text">提供检索和推理过程的透明解释，增强系统可信度和可调试性</text>
+            
+            <circle cx="520" cy="710" r="6" fill="#FF6B6B"/>
+            <text x="540" y="710" class="trend-text">个性化知识网络:</text>
+            <text x="540" y="725" class="trend-text">根据用户背景构建个性化知识图谱，提供定制化信息服务</text>
+            
+            <!-- 总结框 -->
+            <rect x="80" y="750" width="1000" height="40" fill="#f8f9fa" stroke="#ddd" stroke-dasharray="5,5" rx="10"/>
+            <text x="580" y="765" class="trend-text" style="text-anchor:middle; font-weight:bold;">RAG技术发展趋势总结</text>
+            <text x="580" y="780" class="trend-text" style="text-anchor:middle;">随着MCP(多模态、上下文增强、个性化)技术的爆发，RAG技术正从单一检索工具向智能知识生态系统演进。未来RAG将专注于多模态融合、自适应学习、协作式智能等业务。</text>
+        </svg>
+    </div>
+</body>
+</html>
