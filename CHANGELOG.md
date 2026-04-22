@@ -1,5 +1,11 @@
 # Change Log
 
+## v0.1.6 - 20260422
+- 升级 Next.js 16.0.10 → 16.2.4 及 eslint-config-next
+- 将 Geist/Geist Mono 字体从 Google Fonts 切换为本地加载，解决构建时网络依赖
+- 移除 .cursor/environment.json
+- .gitignore 增加 .claude 目录
+
 ## v0.1.5 - 20250606
 - 更新 AI 介绍页面
 - 增加 MCP、DL、ML 相关内容介绍
